@@ -2,6 +2,18 @@ import { Header } from '../components/Header';
 import { products } from '../../starting-code/data/products.js';
 import './HomePage.css';
 export function HomePage(){
+
+   /* fetch('https://example.com/api/products').then((response) => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
+    */
+    fetch('https://example.com/api/products').then((response) => {
+        return response.json()
+        }).then((data) => {
+            console.log(data);
+    });
     return(
         <>
             <title>Ecommerce Project</title>
