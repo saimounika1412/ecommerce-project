@@ -8,7 +8,7 @@ export function Product({ product, loadCart }) {
       productId: product.id,
       quantity,
     });
-    loadCart();
+    await loadCart();
   };
   const selectQuantity = (event) => {
     const selectedQuantity = Number(event.target.value);
