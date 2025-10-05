@@ -1,30 +1,7 @@
-import { Header } from '../components/Header';
-import {useEffect, useState} from 'react';
-import './HomePage.css';
-import axios from 'axios';
-export function HomePage({cart}){
-    const [products, setProducts] = useState([]);
-    
+export function ProductGrid({products}) {
+    return (
 
-    useEffect(() =>{
-        axios.get('/api/products')
-    .then((response) => {
-        setProducts(response.data);
-    });
-}, []);
-
-
-
-
-   
-    return(
-        <>
-            <title>Ecommerce Project</title>
-           
-           <Header cart={cart}/>
-
-            <div className="home-page">
-            <div className="products-grid">
+        <div className="products-grid">
                 {products.map((product) => {
                     return (
                         <div key={product.id} className="product-container">
@@ -224,7 +201,8 @@ export function HomePage({cart}){
                 </button>
                 </div>
             </div>
-            </div>
-        </>
+    
+
+
     );
 }
